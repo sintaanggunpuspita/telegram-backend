@@ -1,6 +1,6 @@
 const connection = require('../configs/db')
 
-const chatmessage = {
+module.exports = {
   insertchatmessage: (data) => {
     console.log(data)
     return new Promise((resolve, reject) => {
@@ -13,39 +13,37 @@ const chatmessage = {
       })
     })
   },
-  getchatmessageById: (id) => {
-    return new Promise((resolve, reject) => {
-      connection.query('SELECT * FROM chatmessage where id = ?', id, (err, result) => {
-        if (!err) {
-          resolve(result)
-        } else {
-          reject(new Error(err))
-        }
-      })
-    })
-  },
-  updatechatmessage: (id, data) => {
-    return new Promise((resolve, reject) => {
-      connection.query('UPDATE chatmessage SET ? WHERE id = ?', [data, id], (err, result) => {
-        if (!err) {
-          resolve(result)
-        } else {
-          reject(new Error(err))
-        }
-      })
-    })
-  },
-  deletechatmessage: (id) => {
-    return new Promise((resolve, reject) => {
-      connection.query('DELETE FROM chatmessage WHERE id = ?', id, (err, result) => {
-        if (!err) {
-          resolve(result)
-        } else {
-          reject(new Error(err))
-        }
-      })
-    })
-  }
 }
-
-module.exports = chatmessage
+  // getchatmessageById: (id) => {
+  //   return new Promise((resolve, reject) => {
+  //     connection.query('SELECT * FROM chatmessage where id = ?', id, (err, result) => {
+  //       if (!err) {
+  //         resolve(result)
+  //       } else {
+  //         reject(new Error(err))
+  //       }
+  //     })
+  //   })
+  // },
+  // updatechatmessage: (id, data) => {
+  //   return new Promise((resolve, reject) => {
+  //     connection.query('UPDATE chatmessage SET ? WHERE id = ?', [data, id], (err, result) => {
+  //       if (!err) {
+  //         resolve(result)
+  //       } else {
+  //         reject(new Error(err))
+  //       }
+  //     })
+  //   })
+  // },
+  // deletechatmessage: (id) => {
+  //   return new Promise((resolve, reject) => {
+  //     connection.query('DELETE FROM chatmessage WHERE id = ?', id, (err, result) => {
+  //       if (!err) {
+  //         resolve(result)
+  //       } else {
+  //         reject(new Error(err))
+  //       }
+  //     })
+  //   })
+  // }

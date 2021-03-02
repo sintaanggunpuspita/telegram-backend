@@ -5,7 +5,7 @@ const userController = require('../controller/users')
 router
   .post('/login', userController.login)
   .post('/register', userController.register)
-  .get('/', userController.getAllUsers)
-  .get('/:id', userController.getFriendsById)
+  // .get('/', userController.getAllUsers)
+  // .get('/:id', userController.getFriendsById)
 
 module.exports = router
